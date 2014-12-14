@@ -5,6 +5,7 @@ output:
     keep_md: true
 ---
 
+`r options(scipen=6)`
 
 ## Loading and preprocessing the data
 

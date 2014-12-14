@@ -6,6 +6,7 @@ output:
 ---
 
 
+
 ## Loading and preprocessing the data
 
 A straightforward command to read in the activity Data Frame from the provided zip file
@@ -116,9 +117,9 @@ steps_by_day <- tapply( activity_df_estimated$steps ,activity_df_estimated$date,
 estimated_mean_steps_per_day       <- round(mean(steps_by_day))
 estimated_median_steps_per_day <- median(steps_by_day)
 ```
-Mean steps per day : 1.0766 &times; 10<sup>4</sup>
+Mean steps per day : 10766
 
-Median steps per day: 1.0762 &times; 10<sup>4</sup>
+Median steps per day: 10762
 
 
 
