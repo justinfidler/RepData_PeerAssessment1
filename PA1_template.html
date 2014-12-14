@@ -255,7 +255,7 @@ plot(
 which_max_steps &lt;- intervals[ which.max(steps_by_interval) ]
 </code></pre>
 
-<p>The five-minute interval 835 is the interval with the highest number of steps averaged across all days with 10927.</p>
+<p>The five-minute interval 835 is the interval with the maximums number of steps averaged across all days with 10927.</p>
 
 <h3>Imputing missing values</h3>
 
@@ -286,8 +286,6 @@ activity_df_estimated &lt;- activity_df
 activity_df_estimated$steps &lt;- estimated_steps
 </code></pre>
 
-<p>What does the new histogram look like now that the NA values have been replace?</p>
-
 <pre><code class="r">hist(activity_df_estimated$steps,xlab=&quot;Steps&quot;,main=&quot;Steps Taken Each Day by Frequency&quot;)
 </code></pre>
 
@@ -299,9 +297,13 @@ estimated_mean_steps_per_day       &lt;- round(mean(steps_by_day))
 estimated_median_steps_per_day &lt;- median(steps_by_day)
 </code></pre>
 
+<p>What does the new histogram look like now that the NA values have been replaced?</p>
+
 <p>Mean steps per day : 10766</p>
 
 <p>Median steps per day: 10762</p>
+
+<p>Note that the new median and mean values are larger than the values before we were estimating values for na.RM.  This makes sense given that we are essentially adding new data in to the frame.</p>
 
 <h3>Are there differences in activity patterns between weekdays and weekends?</h3>
 

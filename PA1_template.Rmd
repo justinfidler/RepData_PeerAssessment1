@@ -60,7 +60,7 @@ max_steps       <- max(steps_by_interval)
 which_max_steps <- intervals[ which.max(steps_by_interval) ]
 
 ```
-The five-minute interval `r which_max_steps` is the interval with the highest number of steps averaged across all days with `r max_steps`.
+The five-minute interval `r which_max_steps` is the interval with the maximums number of steps averaged across all days with `r max_steps`.
 
 
 ### Imputing missing values
@@ -96,8 +96,6 @@ activity_df_estimated$steps <- estimated_steps
 
 ```
 
-What does the new histogram look like now that the NA values have been replace?
-
 ```{r}
 
 hist(activity_df_estimated$steps,xlab="Steps",main="Steps Taken Each Day by Frequency")
@@ -107,11 +105,16 @@ estimated_mean_steps_per_day       <- round(mean(steps_by_day))
 estimated_median_steps_per_day <- median(steps_by_day)
 
 ```
+
+What does the new histogram look like now that the NA values have been replaced?
+
+
 Mean steps per day : `r estimated_mean_steps_per_day`
 
 Median steps per day: `r estimated_median_steps_per_day`
 
 
+Note that the new median and mean values are larger than the values before we were estimating values for na.RM.  This makes sense given that we are essentially adding new data in to the frame.
 
 
 ### Are there differences in activity patterns between weekdays and weekends?
